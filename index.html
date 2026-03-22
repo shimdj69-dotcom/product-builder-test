@@ -3,19 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lotto Number Generator</title>
+    <title>AI Animal Face Test</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Teachable Machine Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
 </head>
 <body>
     <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+
+    <div class="container animal-test">
+        <h1>AI Animal Face Test</h1>
+        <p>Which animal do you look like?</p>
+
+        <div id="upload-area" class="upload-box">
+            <input type="file" id="image-upload" accept="image/*" hidden>
+            <label for="image-upload" class="upload-label">
+                <span class="upload-icon">📸</span>
+                <span class="upload-text">Click or Drag to Upload Photo</span>
+            </label>
+            <img id="face-image" src="" alt="Uploaded Face" style="display: none;">
+        </div>
+
+        <div id="loading-spinner" style="display: none;">Analyzing...</div>
+        <div id="result-container" style="display: none;">
+            <h2 id="result-message"></h2>
+            <div id="label-container"></div>
+        </div>
+
+        <button id="predict-btn" style="display: none;">Analyze Again</button>
+    </div>
+
     <div class="container">
         <h1>Lotto Number Generator</h1>
         <button id="generate">Generate Numbers</button>
         <div id="lotto-sets"></div>
     </div>
 
-    <di
-    v class="container contact-form">
+    <div class="container contact-form">
         <h2>Partnership Inquiry</h2>
         <form action="https://formspree.io/f/mgonjekv" method="POST">
             <div class="form-group">
@@ -46,4 +71,5 @@
     </div>
     <script src="main.js"></script>
 </body>
+</html>
 </html>
