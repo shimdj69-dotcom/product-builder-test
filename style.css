@@ -21,12 +21,15 @@
 body {
     font-family: 'Inter', sans-serif;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     background-color: var(--bg-color);
     color: var(--text-color);
     transition: background-color 0.3s, color 0.3s;
+    gap: 30px;
+    padding: 20px 0;
 }
 
 .container {
@@ -36,6 +39,65 @@ body {
     border-radius: 30px;
     box-shadow: 0 25px 50px -12px var(--shadow-color);
     transition: background-color 0.3s, box-shadow 0.3s;
+    width: 100%;
+    max-width: 500px;
+}
+
+.contact-form {
+    margin-top: 20px;
+    padding: 40px;
+}
+
+.contact-form h2 {
+    margin-bottom: 30px;
+    font-size: 28px;
+    color: var(--heading-color);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+[data-theme="dark"] .form-group input,
+[data-theme="dark"] .form-group textarea {
+    border-color: #4B5563;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #8B5CF6;
+}
+
+#submit-contact {
+    background-image: linear-gradient(to right, #10B981 0%, #3B82F6 100%);
+    border: none;
+    color: white;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 10px 15px rgba(16, 185, 129, 0.2);
+    width: 100%;
+}
+
+#submit-contact:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 25px rgba(16, 185, 129, 0.3);
 }
 
 h1 {

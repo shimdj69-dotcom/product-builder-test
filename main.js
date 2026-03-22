@@ -44,3 +44,5 @@ function displayLottoSets() {
 }
 
 generateBtn.addEventListener('click', displayLottoSets);
+
+
