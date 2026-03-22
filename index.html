@@ -12,30 +12,13 @@
 <body>
     <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
 
-    <div class="container animal-test">
-        <h1>🐶 AI Animal Face Test 🐱</h1>
-        <p class="subtitle">Upload your photo to see if you look more like a Dog or a Cat!</p>
-
-        <div id="upload-area" class="upload-box">
-            <input type="file" id="image-upload" accept="image/*" hidden>
-            <label for="image-upload" class="upload-label">
-                <span class="upload-icon">📸</span>
-                <span class="upload-text">Click or Drag to Upload Photo</span>
-            </label>
-            <img id="face-image" src="" alt="Uploaded Face" style="display: none;">
-        </div>
-
-        <div id="loading-spinner" class="spinner" style="display: none;">
-            <div class="bounce1"></div>
-            <div class="bounce2"></div>
-            <div class="bounce3"></div>
-            <p>Analyzing your features...</p>
-        </div>
-
-        <div id="result-container" style="display: none;">
-            <h2 id="result-message"></h2>
-            <div id="label-container"></div>
-            <button id="restart-btn" class="secondary-btn">Try Another Photo</button>
+    <div class="container">
+        <h1>Welcome to AI Tools</h1>
+        <p class="subtitle">Try our latest AI features!</p>
+        <div style="display: flex; gap: 20px; justify-content: center;">
+            <a href="animal.html" class="secondary-btn" style="text-decoration: none; padding: 15px 30px; background: var(--accent-gradient); font-weight: 700;">
+                🐶 AI Animal Face Test 🐱
+            </a>
         </div>
     </div>
 
@@ -77,3 +60,4 @@
     <script src="main.js"></script>
 </body>
 </html>
+
