@@ -32,27 +32,51 @@ async function initModel() {
 
 const imageUpload = document.getElementById('image-upload');
 const faceImage = document.getElementById('face-image');
+const uploadArea = document.getElementById('upload-area');
 const uploadLabel = document.querySelector('.upload-label');
 const resultContainer = document.getElementById('result-container');
 const resultMessage = document.getElementById('result-message');
 const restartBtn = document.getElementById('restart-btn');
 const loadingSpinner = document.getElementById('loading-spinner');
 
-imageUpload.addEventListener('change', (e) => {
-    const file = e.target.files[0];
-    if (file) {
+// Handle file selection and analysis
+function handleFile(file) {
+    if (file && file.type.startsWith('image/')) {
         const reader = new FileReader();
         reader.onload = async (event) => {
             faceImage.src = event.target.result;
             faceImage.style.display = 'block';
             uploadLabel.style.display = 'none';
             loadingSpinner.style.display = 'block';
+            resultContainer.style.display = 'none';
             
             if (!model) await initModel();
             predict();
         };
         reader.readAsDataURL(file);
+    } else {
+        alert("Please upload an image file.");
     }
+}
+
+// Event Listeners for Upload Area
+imageUpload.addEventListener('change', (e) => {
+    handleFile(e.target.files[0]);
+});
+
+uploadArea.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    uploadArea.classList.add('dragover');
+});
+
+uploadArea.addEventListener('dragleave', () => {
+    uploadArea.classList.remove('dragover');
+});
+
+uploadArea.addEventListener('drop', (e) => {
+    e.preventDefault();
+    uploadArea.classList.remove('dragover');
+    handleFile(e.dataTransfer.files[0]);
 });
 
 async function predict() {
